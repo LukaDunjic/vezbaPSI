@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registracija vozila</title>
+</head>
+<a href="index.html">Pocetna</a>
+<body>
+<h4>Rezervacija termina za registraciju:</h4>
+{% if poruka %}
+<p style="color:red;">{{poruka}}</p>
+{% endif %}
+
+<form name="forma" method="post" action="">
+{% csrf_token %}
+<table>
+    <tr>
+        <td>Agencija:</td>
+        <td> 
+            <select name="agencija">
+            <option value="">Sve</option>
+			{% for agencija in agencije %}
+				<option value="{{agencija.ida}}">{{ agencija.naziv }}</option>
+			{% endfor %}
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Registarske tablice:</td>
+        <td><input type="text" name="tablice"></td>
+    </tr>
+    <tr>
+        <td>Datum:</td>
+        <td><input type="date" name="datum"></td>
+    </tr> 
+    <tr>
+        <td></td>
+        <td><button type="submit">Prikazi termine</button></td>
+    </tr>
+</table>
+</form>
+</body>
+<hr>
+<center>Copyright 2023</center>
+</html>

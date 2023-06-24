@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registracija vozila</title>
+</head>
+<a href="http://127.0.0.1:8000/vezba/index">Pocetna</a>
+<body>
+    
+{% if ok %}
+    <h4>Uspešna rezervacija termina</h4>
+{% else %}
+    <h4 style=\"color:red;">Rezervacija nije uspela</h4>
+{% endif %}
+
+<h4>Uspešna rezervacija termina</h4>
+Registarske tablice:{{ tablice }}<br>
+Datum:{{ datum }}<br>
+Vreme:{{ vreme }}<br>
+Agencija: {{ agencija }} 
+</body>
+<hr>
+<center>Copyright 2023</center>
+</html>

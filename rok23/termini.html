@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registracija vozila</title>
+</head>
+<a href="http://127.0.0.1:8000/vezba/index">Pocetna</a>
+<body>
+<h4>Izbor termina:</h4>
+
+{% if poruka %}
+<p style="color:red;">{{poruka}}</p>
+{% else %}
+
+<table border="1" style="border-collapse: collapse;">
+<tr>
+    <th>Agencija</th>
+    <th>Datum</th>
+    <th>Vreme</th>
+    <th>Iznos</th>
+    <th>Rezervisi</th>
+</tr>
+		{% for termin in termini %}
+			<tr><td>{{ termin.ida.naziv }}</td>
+            <td>{{ termin.datum}}</td>
+            <td>{{ termin.vreme}}</td>
+            <td>{{ termin.cena}}</td>
+            <td><a href=  "{{ termin.vreme }}/recervacija">Rezervisi</a></td></tr>
+        {% endfor %}
+</table>
+{% endif %}
+</body>
+<hr>
+<center>Copyright 2023</center>
+</html>
